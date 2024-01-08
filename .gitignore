@@ -1,5 +1,15 @@
+# IDGAF Gitignore
+#----------------
+
+#VSCODE
+*.code-workspace
+
+# Fossil SCM files
+.fslckout
 fossil-config.txt
 idgaf-fossil
+#-----------------
+#Python Gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
