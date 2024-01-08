@@ -1,0 +1,12 @@
+IDGAF - An experimental,esoteric web application framework
+
+Concepts:
+- BottlePY as base server implementation
+- SQLite as a backend
+- Possibly integrate with SQLite Web Assembly
+- Uses a table for every user
+- Generates front end and back end code
+- Fast and flexible
+- Simplifies all common front end development and rendering
+- GUI for development, administration, operations and monitoring
+- Multi-tenant features
