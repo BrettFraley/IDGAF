@@ -8,7 +8,7 @@ con.commit()
 res = cursor.execute("SELECT testname FROM sqlite_master")
 res.fetchone()
 
-cur.execute("""
+cursor.execute("""
     INSERT INTO tests VALUES
         (Test Name Test),
         (Test Name Location)
@@ -16,18 +16,7 @@ cur.execute("""
 
 con.commit()
 
-res = curspr.execute("SELECT testname, testfile FROM tests")
+res = cursor.execute("SELECT testname, testfile FROM tests")
 data = res.fetchall()
 print(data)
 
-
-"""
-data = [
-    ("Monty Python Live at the Hollywood Bowl", 1982, 7.9),
-    ("Monty Python's The Meaning of Life", 1983, 7.5),
-    ("Monty Python's Life of Brian", 1979, 8.0),
-]
-cur.executemany("INSERT INTO movie VALUES(?, ?, ?)", data)
-con.commit()  # Remember to commit the transaction after executing INSERT.
-
-"""

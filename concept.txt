@@ -1,14 +1,23 @@
 IDGAF - An experimental,esoteric web application framework
 
-Concepts:
+Concepts/Brainstorm:
 - Fossil SCM built in - because it's awesome!
-- BottlePY as base server implementation
-- SQLite as a backend
+- BottlePY as base server/http implementation and routing via Bottle's core features
+- Entirely centric on massive use of SQLite3
 - Possibly integrate with SQLite Web Assembly
-- Uses a table for every user
+- Uses a table for every user, or TYPE, or Type of Type (Entities)
 - Generates front end and back end code
-- Fast and flexible
+- Fast and flexible with little assumption of use cases, but data driven
+- SQL Lite tools for working with, transforming, and migrating data of various file formats and DBMS
 - Simplifies all common front end development and rendering
 - GUI for development, administration, operations and monitoring
 - Multi-tenant features
 - Write and implement IDGAF in IDGAF itself!!!
+
+[ Development GUI local mode -> IDGAF framework/tools -> ]
+
+[ users application (controller, services, DB) -> Browser UI or client ] ->
+
+[ Runtime debug, monitoring, logs ]
+
+[ user's application -> CI/DI -> test-> build -> package -> deployment ]
