@@ -7,7 +7,8 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/route1" class="nav-link" aria-current="page">Route 1</a></li>
+        <li class="nav-item"><a href="/" class="nav-link" aria-current="page">[ ^H^ ]</a></li>
+        <li class="nav-item"><a href="/test" class="nav-link" aria-current="page">Test</a></li>
         <li class="nav-item"><a href="/route2" class="nav-link">Route 2</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Route 3</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Route 4</a></li>
