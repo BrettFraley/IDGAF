@@ -18,8 +18,7 @@ for table in tableNames:
 
 
 for table in tableNames:
-    rows = curser.execute(f"SELECT * FROM {table}")
+    rows = cursor.execute(f"SELECT * FROM {table}")
     print(rows)
 
 con.close()
-
