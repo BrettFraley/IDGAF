@@ -21,3 +21,10 @@ Concepts/Brainstorm:
 [ Runtime debug, monitoring, logs ]
 
 [ user's application -> CI/DI -> test-> build -> package -> deployment ]
+
+
+Idea:
+binserve, optimized for heavy sqlite usage and workflows, possibly across containers and or large filesystems,
+with built in bioinformatics and workflow tools and algorithms -> served with a GUI..
+
+
