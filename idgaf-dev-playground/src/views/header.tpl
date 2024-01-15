@@ -8,10 +8,11 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link" aria-current="page">[ ^H^ ]</a></li>
-        <li class="nav-item"><a href="/test" class="nav-link" aria-current="page">Test</a></li>
-        <li class="nav-item"><a href="/route2" class="nav-link">Route 2</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Route 3</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Route 4</a></li>
+        <li class="nav-item"><a href="/test-lab" class="nav-link" aria-current="page">Test Lab</a></li>
+        <li class="nav-item"><a href="/dev-sessions" class="nav-link">Dev Sessions</a></li>
+        <li class="nav-item"><a href="/project-management" class="nav-link">Project</a></li>
+        <li class="nav-item"><a href="/docs" class="nav-link">Docs</a></li>
+        
       </ul>
     </header>
 </div>

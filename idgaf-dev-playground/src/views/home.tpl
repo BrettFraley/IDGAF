@@ -22,8 +22,8 @@
     </div>
 </div>
 
-<div class="container-fluid landing-info-section">
-    <div class="row justify-content-md-center landing-info-content">
+<div class="container-fluid ">
+    <div class="row justify-content-md-center">
 
         <div class="col-4">
             <p>Notes / TODO</p>

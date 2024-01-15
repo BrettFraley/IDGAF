@@ -17,6 +17,10 @@ dbSettings = DBSettings()
 def serve_static(filename):
     return static_file(filename, root='./views/static')
 
+@route('/documentation/<filename>')
+def serve_static_documentation(filename):
+    return static_file(filename, root='../documentation')
+
 @route('/styles/<filename>')
 def serve_styles(filename):
     return static_file(filename, root='./views/styles')
@@ -42,9 +46,30 @@ def setupDevSessionsTable(devSessionFileName):
 
     return f"</p> New Dev Session Table Created. SQLite filename: {devSessionFileName}</p>"
 
+# Testing Routes
+
+@route('/test-lab')
+def testLab():
+    return template('./views/metadata-views/test-lab')
+
+@route('test-lab/git-history')
+def testLabGitHistory():
+    history = os.system("git log")
+    print(history)
+    return template('./views/metadata-views/test-lab', gitHistory=history)
+
+# Project Management Routes
+@route('/project-management')
+def projectManagement():
+    return template('./views/project-management/project-management-dashboard.tpl')
 
 
 # UTILITY ROUTES
+@route('/docs')
+def docs():
+    return template('./views/docs/docs.tpl')
+
+
 @route('/test')
 def test():
     sys = os.name
