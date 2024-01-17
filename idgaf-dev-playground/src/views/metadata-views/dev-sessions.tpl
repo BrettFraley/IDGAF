@@ -11,20 +11,20 @@
         <div class="row">
             <p>New Dev Session</p>
             <form action="/new-dev-session" method="POST" enctype="multipart/form-data">
-                <div class="row">
+                <div class="row g-3 m-3">
 
-                    <div class="col">
-                        <label for="developer">Developer</label>
-                        <input type="text" class="form-control border border-dark" placeholder="Developer Name" aria-label="Developer Name" name="developer">
+                    <div class="col-md-4">
+                        <label for="developer" class="form-label m-1">Developer</label>
+                        <input type="text" class="form-control border border-dark" placeholder="..." aria-label="Developer Name" name="developer">
                     </div>
-                    <div class="col">
-                        <label for="Session Name">Session Name</label>
-                        <input type="text" class="form-control border border-dark" placeholder="Session Name" aria-label="Session Name" name="sessionName">
+                    <div class="col-md-4">
+                        <label for="Session Name" class="form-label m-1">Session Name</label>
+                        <input type="text" class="form-control border border-dark" placeholder="..." aria-label="Session Name" name="sessionName">
                     </div>
 
-                    <div class="col">
-                        <label for="Session Type">Session Type</label>
-                        <select class="form-select border border-dark" aria-label="Session Type" name="sessionType">
+                    <div class="col-md-4">
+                        <label for="Session Type" class="form-label m-1">Session Type</label>
+                        <select class="form-select border border-dark" aria-label="Session Type" placeholder="Choose" name="sessionType">
                             
                             <option value="Feature">Feature</option>
                             <option value="Story">User Story</option>
@@ -33,13 +33,14 @@
                             <option value="Misc">Miscellaneous</option>
                         </select>
                     </div>
-
-            
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control border border-dark" rows="3" name="description"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="row mt-3">
+                    <label for="description" class="form-label m-1">Description</label>
+                    <textarea class="form-control border border-dark m-2" rows="3" name="description"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary mt-3">Submit</button>
         
             </form>
 
@@ -50,7 +51,7 @@
             <p>Create New Dev Session Table</p>
             <form action="/new-dev-session-table" method="POST" enctype="multipart/form-data">
                 <div class="row">
-
+P
                     <div class="col-3">
                         <label for="tableName">Table Name</label>
                         <input type="text" class="form-control border border-dark" placeholder="Table Name" aria-label="Table Name" name="tableName">

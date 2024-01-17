@@ -9,6 +9,7 @@ bottle-boilerplate = "*"
 click = "*"
 beaker = "*"
 jinja2 = "*"
+sqlmodel = "*"
 
 [dev-packages]
 
