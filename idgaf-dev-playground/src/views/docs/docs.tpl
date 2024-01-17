@@ -28,7 +28,7 @@
         <ul>
             <li><a href="../../documentation/bottle-docs.pdf">Bottle Docs</a></li>
             <li><a href="https://www.sqlite.org/docs.html" target="_blank">SQLite Docs</a></li>
-            <li><a href="https://docs.python.org/3/library/sqlite3.html">Python SQLite3 Docs"></a></li>
+            <li><a href="https://docs.python.org/3/library/sqlite3.html">Python SQLite3 Docs</a></li>
         </ul>
     </div>
 </div>

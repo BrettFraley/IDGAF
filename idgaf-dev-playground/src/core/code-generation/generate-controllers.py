@@ -1,8 +1,8 @@
 # Goal: Generate route, query, and template pages within the dev playground
-# this then becomes part of the devlopment experience - being able to
+# this then becomes part of the development experience - being able to
 # generate code both for the user's target application and for the 
 # Integrated Dev Gateway/Playground/Project Management Features.
-# Generate scaffols for documentations POSTS, TODOs, NEW Project Manaagment Pages, etc...
+# Generate scaffolds for documentations POSTS, TODOs, NEW Project Management Pages, etc...
 
 # NOTE: functionality such as this (code generation should all remain in core). 
 # The 'core' dir is for functionality that is utilized in the playground, as well
@@ -21,19 +21,20 @@ def generate_route_controller(path, controller_name, template_name, route_params
 
 
 # Route definition
-@app.route('{path}', methods=['GET'])
-def {controller_name({', '.join(route_params)}):
+generated_route = f"@app.route('{path}', methods=[{method}])
+def {controller_name({', '.join(route_params)})}:
     # Your controller logic here
-    {'\n    '.join(controller_functions)
+    \n{'    '.join(controller_functions)}
 
-    return controller_template
+    return {controller_template}"
 
 # Example usage
-file_path_input = "/example"
-template_name_input = "example_template"
-route_params_input = ["param1", "param2"]
-controller_functions_input = ["# Function 1 logic", "# Function 2 logic"]
+# file_path_input = "/example"
+# template_name_input = "example_template"
+# route_params_input = ["param1", "param2"]
+# controller_functions_input = ["# Function 1 logic", "# Function 2 logic"]
 
-generated_code = generate_route_controller(file_path_input, template_name_input, route_params_input, method, controller_functions_input)
+# generated_code = generate_route_controller(file_path_input, template_name_input, route_params_input, method, controller_functions_input)
 
-print(generated_code)
+# print(generated_code)
+

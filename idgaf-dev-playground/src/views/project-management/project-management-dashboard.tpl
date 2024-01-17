@@ -14,7 +14,7 @@
             <li>Implement initial SQLite Lab UI feature.</li>
             <li>Implement features in this dashboard.</li>
             <li>Module organization/structure/system</li>
-            <li>Test suite strategies and experiementation</li>
+            <li>Test suite strategies and experimentation</li>
         </ul>
 
         <h4>Current Tasks For This Dashboard Itself</h4>

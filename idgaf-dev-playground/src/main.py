@@ -1,12 +1,12 @@
 import os, json, urllib, sqlite3
 
-from bottle import route, get, post, request, response, run, template, static_file, TEMPLATE_PATH
+from bottle import route, get, post, request, response, redirect, run, template, static_file, TEMPLATE_PATH
 
 class DBSettings():
     def __init__(self):
-        self.dbPath = "../data/"
-        self.devSessionsPath = "../data/dev-sessions"
-        self.testTablesPath = "../data/test-tables"
+        self.dbPath = "../databases/"
+        self.devSessionsDB = "../databases/dev-sessions/dev-sessions.db"
+        self.testTablesDB = "./databases/test-tables/"
         
 
 dbSettings = DBSettings()
@@ -30,21 +30,65 @@ def serve_styles(filename):
 def home():
     return template('./views/home')
 
+# Dev Sessions Page
 @route('/dev-sessions')
 def devSessions():
-    return template('./views/metadata-views/dev-sessions')
-
-@route('/setup-dev-sessions-table/<devSessionFileName>')
-def setupDevSessionsTable(devSessionFileName):
-    
-    con = sqlite3.connect(f"{dbSettings.dbPath}{devSessionFileName}.db")
+    con = sqlite3.connect(dbSettings.devSessionsDB)
     cursor = con.cursor()
-    table = f"CREATE TABLE dev_sessions(id INTEGER PRIMARY KEY, username TEXT, start_time TEXT, end_time TEXT, session_notes TEXT, commits TEXT)"
+
+    getSessionsQuery = "SELECT * FROM sessions;"
+    results = cursor.execute(getSessionsQuery)
+    sessions = results.fetchall()
+
+    return template('./views/metadata-views/dev-sessions', sessions=sessions)
+
+# Create new dev session and upon 200 return to  /dev-sessions
+@route('/new-dev-session', method=['POST'])
+def newDevSession():
+
+    developer = request.forms.get('developer')
+    sessionName = request.forms.get('sessionName')
+    sessionType = request.forms.get('sessionType')
+    description = request.forms.get('description')
+
+    db = dbSettings.devSessionsDB # TODO make dynamic for different dev sessions databases
+    con = sqlite3.connect(db)
+    cursor = con.cursor()
+
+    query = f"INSERT INTO sessions (developer, session_name, session_type, session_description) VALUES ( '{developer}', '{sessionName}', '{sessionType}', '{description}' );"
+    cursor.execute(query)
+    con.commit()
+    con.close()
+
+    redirect('/dev-sessions')
+
+
+# New Dev Sessions Table
+@route('/new-dev-sessions-table', method = ['POST']) # TODO make a param
+def setupDevSessionsTable():
+
+    tableName = request.forms.get('tableName')
+
+    db = dbSettings.devSessionsDB # TODO make dynamic for different dev sessions databases
+    con = sqlite3.connect(db)
+
+    # TODO query using user params!
+    table = f"CREATE TABLE IF NOT EXISTS {tableName} (id INTEGER PRIMARY KEY, developer TEXT, session_name TEXT, session_type TEXT, description);"
+    cursor = con.cursor()
     cursor.execute(table)
     con.commit()
     con.close()
 
-    return f"</p> New Dev Session Table Created. SQLite filename: {devSessionFileName}</p>"
+# TODO route get-dev-sessions-tables
+
+#     INSERT INTO table_name(column1,column2,...)
+# VALUES(value_1,value_2,...),
+#       (value_1,value_2,...),
+#       (value_1,value_2,...)...
+
+#
+
+
 
 # Testing Routes
 
