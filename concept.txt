@@ -12,6 +12,14 @@ Concepts/Brainstorm:
 - Simplifies all common front end development and rendering
 - GUI for development, administration, operations and monitoring
 - Multi-tenant features
+- Project Management Tools
+- Developer Sessions Tools
+- Developer Notes
+- Brain Dump
+- Where to store user content (developer process/notes/workflow meta content)? In/as static files, or database?
+- Or database as a catalog of paths to files.
+- CLI and REPL
+- Embedded editor and Shell?
 - Write and implement IDGAF in IDGAF itself!!!
 
 [ Development GUI local mode -> IDGAF framework/tools -> ]
@@ -24,7 +32,8 @@ Concepts/Brainstorm:
 
 
 Idea:
-binserve, optimized for heavy sqlite usage and workflows, possibly across containers and or large filesystems,
+binserve -> or other fast server (with controllers) (maybe in Golang) -> optimized for heavy sqlite usage and workflows,
+possibly across containers and or large filesystems,
 with built in bioinformatics and workflow tools and algorithms -> served with a GUI..
 
 
