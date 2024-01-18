@@ -1,0 +1,17 @@
+{
+  "name": "idgaf",
+  "version": "1.0.0",
+  "description": "JS for the IDGAF Dev Playground",
+  "main": "idgaf.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "codemirror": "^6.0.1",
+    "rollup": "^4.9.5"
+  }
+}

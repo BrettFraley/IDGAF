@@ -25,6 +25,10 @@ def serve_static_documentation(filename):
 def serve_styles(filename):
     return static_file(filename, root='./views/styles')
 
+@route('/js/<filename>')
+def serve_styles(filename):
+    return static_file(filename, root='./views/js')
+
 # Landing Page
 @route('/')
 def home():
